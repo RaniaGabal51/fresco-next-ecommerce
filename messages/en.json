@@ -1,0 +1,160 @@
+{
+  "navbar": {
+    "topBanner": {
+      "shipping": "Free shipping on orders over $50",
+      "arrivals": "New arrivals daily"
+    },
+    "help": "Help",
+    "searchPlaceholder": "Search products...",
+    "freshnessGuaranteed": "Freshness guaranteed",
+    "brandSubtitle": "FRESH · CURATED · DAILY",
+    "links": {
+      "home": "Home",
+      "shop": "Shop",
+      "categories": "Categories",
+      "brands": "Brands",
+      "deals": "Deals"
+    },
+    "buttons": {
+      "account": "Account",
+      "signIn": "Sign in",
+      "signUp": "Create account"
+    },
+    
+  "accountMenu": {
+    "profile": "My profile",
+    "orders": "My orders",
+    "settings": "Settings",
+    "logout": "Log out"
+  },
+    "ariaLabels": {
+      "openMenu": "Open menu",
+      "search": "Search",
+      "wishlist": "Wishlist",
+      "shoppingBag": "Shopping bag"
+    }
+  },
+  "signupHero": {
+    "brandSubtitle": "FRESH · CURATED · DAILY",
+    "welcome": "Welcome to Fresco",
+    "title": "Create your account and start discovering.",
+    "description": "Join FRESCO and discover thoughtfully curated products, trusted brands, fresh arrivals, and exclusive offers made for everyday living.",
+    "benefitTitle": "A better way to shop",
+    "benefitDesc": "Fresh picks, trusted products."
+  },
+  "signupForm": {
+    "getStarted": "Get started",
+    "title": "Create your account",
+    "description": "Enter your details below to create your FRESCO account.",
+    "labels": {
+      "name": "Full name",
+      "phone": "Phone number",
+      "email": "Email address",
+      "password": "Password",
+      "rePassword": "Confirm password"
+    },
+    "placeholders": {
+      "name": "Ahmed Abd Al-Muti",
+      "phone": "01010700701",
+      "email": "ahmedmuttii4012@gmail.com",
+      "password": "Create a password",
+      "rePassword": "Repeat your password"
+    },
+    "strength": {
+      "enterPassword": "Enter a password",
+      "weak": "Weak password",
+      "medium": "Medium strength",
+      "strong": "Strong password",
+      "hint": "Use 8+ characters"
+    },
+    "terms": {
+      "agree": "I agree to the",
+      "termsLink": "Terms of Service",
+      "and": "and",
+      "privacyLink": "Privacy Policy"
+    },
+    "buttons": {
+      "submit": "Create account"
+    },
+    "footer": {
+      "member": "Already a member?",
+      "hasAccount": "I already have an account.",
+      "signIn": "Sign in"
+    }
+  },
+  "loginForm": {
+    "mobileTagline": "FRESH. CURATED. DAILY.",
+    "welcomeBack": "Welcome back",
+    "title": "Sign in to FRESCO",
+    "subtitle": "Enter your details below to access your account and continue shopping.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "Enter your email",
+    "passwordLabel": "Password",
+    "forgotPassword": "Forgot password?",
+    "passwordPlaceholder": "Enter your password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "rememberMe": "Remember me",
+    "submitButton": "Sign in",
+    "newHere": "New here?",
+    "noAccount": "Don't have a FRESCO account?",
+    "signUpLink": "Sign up"
+  },
+  "loginHero": {
+    "tagline": "FRESH. CURATED. DAILY.",
+    "headingLine1": "Good to see",
+    "headingLine2": "you again.",
+    "description": "Sign in to continue your FRESCO journey and discover products carefully selected with you in mind.",
+    "card1Title": "Curated for you",
+    "card1Desc": "Thoughtfully selected products.",
+    "card2Title": "Fresh experience",
+    "card2Desc": "Simple shopping, made better.",
+    "badgeTitle": "A better way to shop",
+    "badgeDesc": "Fresh picks, trusted products."
+  },
+  "footer": {
+    "tagline": "FRESH · CURATED · DAILY",
+    "description": "Discover thoughtfully curated products for everyday living. Fresh finds, trusted brands, and a shopping experience made simple.",
+    "contact": {
+      "email": "support@fresco.com",
+      "phone": "+1 234 567 890"
+    },
+    "categories": {
+      "title": "Categories",
+      "mens": "Men's Fashion",
+      "womens": "Women's Fashion",
+      "babyToys": "Baby & Toys",
+      "beautyHealth": "Beauty & Health",
+      "electronics": "Electronics"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "about": "About Us",
+      "shop": "Shop",
+      "brands": "Brands",
+      "deals": "Deals",
+      "contact": "Contact Us"
+    },
+    "customer": {
+      "title": "Customer Service",
+      "account": "My Account",
+      "orders": "My Orders",
+      "wishlist": "Wishlist",
+      "returns": "Returns & Refunds",
+      "help": "Help Center"
+    },
+    "newsletter": {
+      "title": "Stay Fresh",
+      "description": "Get fresh arrivals, exclusive deals, and curated picks straight to your inbox.",
+      "placeholder": "Your email address",
+      "disclaimer": "By subscribing, you agree to receive our latest updates."
+    },
+    "bottom": {
+      "rights": "All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "shipping": "Shipping",
+      "secure": "Secure payments"
+    }
+  }
+}
