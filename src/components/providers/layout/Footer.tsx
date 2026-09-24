@@ -41,7 +41,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border bg-primary text-background">
-      <div className="mx-auto max-w-7xl px-4 pb-10 pt-12 sm:px-6 sm:pt-14 lg:px-8 lg:pt-16">
+      <div className="w-full pb-10 pt-12 px-6 sm:px-10 sm:pt-14 lg:px-16 lg:pt-16 xl:px-24">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4">
             <Link
@@ -234,7 +234,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-background/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-5 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+        <div className="w-full flex flex-col gap-4 px-6 py-5 sm:px-10 md:flex-row md:items-center md:justify-between lg:px-16 xl:px-24">
           <p className="text-center text-[10px] text-sage md:text-start">
             © {new Date().getFullYear()} FRESCO. {t("bottom.rights")}
           </p>

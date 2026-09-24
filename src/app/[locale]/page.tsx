@@ -1,7 +1,5 @@
+import HomeScreen from "@/src/features/home/screens/HomeScreen";
+
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <h2>Home</h2>
-    </div>
-  );
+  return <HomeScreen />;
 }

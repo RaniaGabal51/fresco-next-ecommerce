@@ -20,13 +20,12 @@
       "signIn": "Sign in",
       "signUp": "Create account"
     },
-    
-  "accountMenu": {
-    "profile": "My profile",
-    "orders": "My orders",
-    "settings": "Settings",
-    "logout": "Log out"
-  },
+    "accountMenu": {
+      "profile": "My profile",
+      "orders": "My orders",
+      "settings": "Settings",
+      "logout": "Log out"
+    },
     "ariaLabels": {
       "openMenu": "Open menu",
       "search": "Search",
@@ -155,6 +154,156 @@
       "terms": "Terms of Service",
       "shipping": "Shipping",
       "secure": "Secure payments"
+    }
+  },
+  "homeSlider": {
+    "slide1": {
+      "eyebrow": "NEW SEASON ARRIVALS",
+      "title": "Define Your\nPersonal Style",
+      "description": "Explore curated collections of premium clothing, footwear, and lifestyle essentials tailored for you.",
+      "button": "Shop Collection",
+      "imageAlt": "Fashion and lifestyle clothing display"
+    },
+    "slide2": {
+      "eyebrow": "NEXT-GEN TECHNOLOGY",
+      "title": "Power & Sound\nAt Your Fingertips",
+      "description": "Upgrade your workflow and entertainment with high-performance laptops and immersive wireless audio.",
+      "button": "Discover Tech",
+      "imageAlt": "Laptops and wireless audio gear"
+    },
+    "slide3": {
+      "eyebrow": "FAST & SECURE SHOPPING",
+      "title": "Quality Products\nDelivered With Care",
+      "description": "Enjoy a seamless shopping experience with fast shipping, secure checkout, and 24/7 customer support.",
+      "button": "Start Shopping",
+      "imageAlt": "Seamless shopping and delivery experience"
+    },
+    "features": {
+      "shipping": {
+        "title": "Free Shipping",
+        "description": "On orders over 500 EGP"
+      },
+      "payment": {
+        "title": "Secure Payment",
+        "description": "Your payment is protected"
+      },
+      "returns": {
+        "title": "Easy Returns",
+        "description": "14-day return policy"
+      },
+      "support": {
+        "title": "Dedicated Support",
+        "description": "We're here to help anytime"
+      }
+    }
+  },
+  "homeCategories": {
+    "eyebrow": "EXPLORE OUR COLLECTION",
+    "title": "Shop by Category",
+    "description": "Discover products curated for every style, need, and everyday moment.",
+    "viewAll": "View All"
+  },
+  "featuredProducts": {
+    "eyebrow": "FRESH PICKS FOR YOU",
+    "title": "Featured Products",
+    "description": "Explore some of our most popular picks, selected for everyday shopping.",
+    "viewAll": "View All",
+    "viewAllProducts": "View All Products"
+  },
+  "product": {
+    "breadcrumb": {
+      "home": "Home",
+      "shop": "Shop"
+    },
+    "labels": {
+      "sale": "Sale",
+      "reviews": "Reviews",
+      "save": "Save",
+      "inStock": "In Stock",
+      "outOfStock": "Out of Stock",
+      "sold": "sold",
+      "quantity": "Quantity",
+      "total": "Total",
+      "pieces": "pieces"
+    },
+    "actions": {
+      "addToCart": "Add to Cart",
+      "wishlist": "Wishlist",
+      "share": "Share this product"
+    },
+    "benefits": {
+      "fastDelivery": {
+        "title": "Fast Delivery",
+        "description": "Quick & reliable shipping"
+      },
+      "easyReturns": {
+        "title": "Easy Returns",
+        "description": "Simple return process"
+      },
+      "securePayment": {
+        "title": "Secure Payment",
+        "description": "Protected checkout"
+      }
+    },
+    "tabs": {
+      "details": "Product Details",
+      "reviews": "Reviews",
+      "shipping": "Shipping & Returns"
+    },
+    "details": {
+      "eyebrow": "PRODUCT INFORMATION",
+      "title": "Product Details",
+      "brand": "Brand",
+      "category": "Category",
+      "subcategory": "Subcategory",
+      "available": "Available",
+      "sold": "Sold"
+    },
+    "reviews": {
+      "basedOn": "Based on {count} reviews",
+      "eyebrow": "CUSTOMER FEEDBACK",
+      "title": "Customer Reviews",
+      "customer": "Customer",
+      "empty": "No reviews yet."
+    },
+    "shipping": {
+      "eyebrow": "DELIVERY INFORMATION",
+      "title": "Shipping & Returns",
+      "shipping": {
+        "title": "Shipping",
+        "items": [
+          "Orders are carefully packed before dispatch.",
+          "Delivery time may vary depending on your location.",
+          "Shipping availability is shown during checkout."
+        ]
+      },
+      "returns": {
+        "title": "Returns",
+        "items": [
+          "Items should be returned in their original condition.",
+          "Return eligibility depends on the product and order.",
+          "Contact support if you need help with a return."
+        ]
+      },
+      "secureCheckout": {
+        "title": "Secure Checkout",
+        "items": [
+          "Your checkout information is handled securely.",
+          "Payment details are protected during checkout."
+        ]
+      },
+      "help": {
+        "title": "Need Help?",
+        "items": [
+          "Our support team is available to help with your order.",
+          "Contact FRESCO support for shipping or return questions."
+        ]
+      }
+    },
+    "share": {
+      "title": "Check out this product | FRESCO",
+      "text": "Take a look at this beautiful product from FRESCO.",
+      "unsupported": "Sharing is not supported in this browser."
     }
   }
 }
