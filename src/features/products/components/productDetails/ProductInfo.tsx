@@ -34,11 +34,16 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
   const reviews = productinfo.reviews || [];
   const ratingCount = productinfo.ratingsQuantity || reviews.length;
 
-  const hasDiscount =
-    productinfo.priceAfterDiscount &&
-    productinfo.priceAfterDiscount < productinfo.price;
+  const discountedPrice = productinfo.priceAfterDiscount;
 
-  const currentPrice = productinfo.priceAfterDiscount || productinfo.price;
+  const hasDiscount =
+    discountedPrice != null && discountedPrice < productinfo.price;
+
+  const currentPrice =
+    discountedPrice != null && discountedPrice > 0
+      ? discountedPrice
+      : productinfo.price;
+
   const totalPrice = currentPrice * quantity;
 
   const images = useMemo(() => {
@@ -75,8 +80,7 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
           text: t("share.text"),
           url: window.location.href,
         });
-      } catch (error) {
-      }
+      } catch (error) {}
     } else {
       alert(t("share.unsupported"));
     }
@@ -212,7 +216,7 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
                       <span className="rounded-full bg-accent/10 px-2.5 py-1 text-[9px] font-semibold text-accent">
                         {t("labels.save")}{" "}
                         {(
-                          productinfo.price - productinfo.priceAfterDiscount
+                          productinfo.price - currentPrice
                         ).toLocaleString()}{" "}
                         EGP
                       </span>
@@ -410,14 +414,26 @@ function ProductDetailsTab({ product }: { product: ProductDetails }) {
         </p>
 
         <div className="divide-y divide-border-light">
-          <DetailRow label={t("details.brand")} value={product.brand?.name || "—"} />
-          <DetailRow label={t("details.category")} value={product.category?.name || "—"} />
+          <DetailRow
+            label={t("details.brand")}
+            value={product.brand?.name || "—"}
+          />
+          <DetailRow
+            label={t("details.category")}
+            value={product.category?.name || "—"}
+          />
           <DetailRow
             label={t("details.subcategory")}
             value={product.subcategory?.[0]?.name || "—"}
           />
-          <DetailRow label={t("details.available")} value={`${product.quantity} ${t("labels.pieces")}`} />
-          <DetailRow label={t("details.sold")} value={`${product.sold || 0} ${t("labels.pieces")}`} />
+          <DetailRow
+            label={t("details.available")}
+            value={`${product.quantity} ${t("labels.pieces")}`}
+          />
+          <DetailRow
+            label={t("details.sold")}
+            value={`${product.sold || 0} ${t("labels.pieces")}`}
+          />
         </div>
       </div>
     </div>

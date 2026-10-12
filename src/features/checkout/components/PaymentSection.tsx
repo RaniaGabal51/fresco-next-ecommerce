@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -9,9 +10,11 @@ import {
 } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
 
+export type PaymentMethod = "cash" | "online";
+
 interface PaymentSectionProps {
-  paymentMethod: string;
-  setPaymentMethod: (method: string) => void;
+  paymentMethod: PaymentMethod;
+  setPaymentMethod: (method: PaymentMethod) => void;
 }
 
 export default function PaymentSection({
@@ -27,6 +30,7 @@ export default function PaymentSection({
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/5 text-primary">
             <IconWallet size={20} stroke={1.5} />
           </div>
+
           <div>
             <h2 className="font-serif text-lg font-semibold text-primary">
               {t("title")}
@@ -74,7 +78,9 @@ export default function PaymentSection({
                 : "border-border"
             }`}
           >
-            {paymentMethod === "cash" && <IconCheck size={12} stroke={3} />}
+            {paymentMethod === "cash" && (
+              <IconCheck size={12} stroke={3} />
+            )}
           </div>
         </button>
 
@@ -98,10 +104,14 @@ export default function PaymentSection({
           </div>
 
           <div className="min-w-0 flex-1">
-            <h3 className="text-xs font-semibold text-primary">{t("onlineTitle")}</h3>
+            <h3 className="text-xs font-semibold text-primary">
+              {t("onlineTitle")}
+            </h3>
+
             <p className="mt-1 text-[10px] leading-5 text-muted">
               {t("onlineDesc")}
             </p>
+
             <div className="mt-2.5 flex items-center gap-2">
               <span className="rounded border border-border-light bg-background px-1.5 py-0.5 text-[9px] font-semibold text-muted">
                 VISA
@@ -122,7 +132,9 @@ export default function PaymentSection({
                 : "border-border"
             }`}
           >
-            {paymentMethod === "online" && <IconCheck size={12} stroke={3} />}
+            {paymentMethod === "online" && (
+              <IconCheck size={12} stroke={3} />
+            )}
           </div>
         </button>
 
@@ -130,6 +142,7 @@ export default function PaymentSection({
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-success/10 text-success">
             <IconShieldCheck size={18} stroke={1.7} />
           </div>
+
           <div>
             <p className="text-xs font-semibold text-success">
               {t("secureTitle")}

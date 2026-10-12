@@ -1,3 +1,4 @@
+
 "use server";
 
 import axios, { AxiosRequestConfig } from "axios";
@@ -12,15 +13,21 @@ export async function getCartItems(): Promise<CartResponse> {
     return {
       status: "fail",
       message: "you are not logged in.",
+      numOfCartItems: 0,
+      cartId: "",
+      data: {
+        products: [],
+        totalCartPrice: 0,
+      },
     };
   }
 
   try {
     const options: AxiosRequestConfig = {
-      url: `https://ecommerce.routemisr.com/api/v2/cart`,
+      url: "https://ecommerce.routemisr.com/api/v2/cart",
       method: "GET",
       headers: {
-        token: token?.value,
+        token: token.value,
       },
     };
 
@@ -30,11 +37,19 @@ export async function getCartItems(): Promise<CartResponse> {
     return {
       status: "fail",
       message: "you are not logged in.",
+      numOfCartItems: 0,
+      cartId: "",
+      data: {
+        products: [],
+        totalCartPrice: 0,
+      },
     };
   }
 }
 
-export async function addProductToCart(id: string): Promise<CartResponse> {
+export async function addProductToCart(
+  id: string,
+): Promise<CartResponse> {
   const cookieStore = await cookies();
   const token = cookieStore.get("token");
 
@@ -42,15 +57,21 @@ export async function addProductToCart(id: string): Promise<CartResponse> {
     return {
       status: "fail",
       message: "you are not logged in.",
+      numOfCartItems: 0,
+      cartId: "",
+      data: {
+        products: [],
+        totalCartPrice: 0,
+      },
     };
   }
 
   try {
     const options: AxiosRequestConfig = {
-      url: `https://ecommerce.routemisr.com/api/v2/cart`,
+      url: "https://ecommerce.routemisr.com/api/v2/cart",
       method: "POST",
       headers: {
-        token: token?.value,
+        token: token.value,
       },
       data: {
         productId: id,
@@ -63,11 +84,19 @@ export async function addProductToCart(id: string): Promise<CartResponse> {
     return {
       status: "fail",
       message: "you are not logged in.",
+      numOfCartItems: 0,
+      cartId: "",
+      data: {
+        products: [],
+        totalCartPrice: 0,
+      },
     };
   }
 }
 
-export async function deleteProductFromCart(id: string): Promise<CartResponse> {
+export async function deleteProductFromCart(
+  id: string,
+): Promise<CartResponse> {
   const cookieStore = await cookies();
   const token = cookieStore.get("token");
 
@@ -75,6 +104,12 @@ export async function deleteProductFromCart(id: string): Promise<CartResponse> {
     return {
       status: "fail",
       message: "you are not logged in.",
+      numOfCartItems: 0,
+      cartId: "",
+      data: {
+        products: [],
+        totalCartPrice: 0,
+      },
     };
   }
 
@@ -83,7 +118,7 @@ export async function deleteProductFromCart(id: string): Promise<CartResponse> {
       url: `https://ecommerce.routemisr.com/api/v2/cart/${id}`,
       method: "DELETE",
       headers: {
-        token: token?.value,
+        token: token.value,
       },
     };
 
@@ -93,6 +128,12 @@ export async function deleteProductFromCart(id: string): Promise<CartResponse> {
     return {
       status: "fail",
       message: "you are not logged in.",
+      numOfCartItems: 0,
+      cartId: "",
+      data: {
+        products: [],
+        totalCartPrice: 0,
+      },
     };
   }
 }
@@ -105,15 +146,21 @@ export async function clearCart(): Promise<CartResponse> {
     return {
       status: "fail",
       message: "you are not logged in.",
+      numOfCartItems: 0,
+      cartId: "",
+      data: {
+        products: [],
+        totalCartPrice: 0,
+      },
     };
   }
 
   try {
     const options: AxiosRequestConfig = {
-      url: `https://ecommerce.routemisr.com/api/v2/cart`,
+      url: "https://ecommerce.routemisr.com/api/v2/cart",
       method: "DELETE",
       headers: {
-        token: token?.value,
+        token: token.value,
       },
     };
 
@@ -123,6 +170,12 @@ export async function clearCart(): Promise<CartResponse> {
     return {
       status: "fail",
       message: "you are not logged in.",
+      numOfCartItems: 0,
+      cartId: "",
+      data: {
+        products: [],
+        totalCartPrice: 0,
+      },
     };
   }
 }
@@ -138,6 +191,12 @@ export async function updateProductQuantity(
     return {
       status: "fail",
       message: "you are not logged in.",
+      numOfCartItems: 0,
+      cartId: "",
+      data: {
+        products: [],
+        totalCartPrice: 0,
+      },
     };
   }
 
@@ -146,10 +205,10 @@ export async function updateProductQuantity(
       url: `https://ecommerce.routemisr.com/api/v2/cart/${id}`,
       method: "PUT",
       headers: {
-        token: token?.value,
+        token: token.value,
       },
       data: {
-       count,
+        count,
       },
     };
 
@@ -159,6 +218,12 @@ export async function updateProductQuantity(
     return {
       status: "fail",
       message: "you are not logged in.",
+      numOfCartItems: 0,
+      cartId: "",
+      data: {
+        products: [],
+        totalCartPrice: 0,
+      },
     };
   }
 }
