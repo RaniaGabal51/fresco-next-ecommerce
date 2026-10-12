@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import {
   IconChevronRight,
@@ -11,23 +12,31 @@ import {
   IconArrowUpRight,
 } from "@tabler/icons-react";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import { getAllCategories } from "@/src/features/categories/services/getAllCategories";
+import type { Category } from "@/src/features/categories/types/categories.types";
 
 export default function Footer() {
   const t = useTranslations("footer");
 
-  const categories = [
-    { label: t("categories.mens"), href: "/categories/mens-fashion" },
-    { label: t("categories.womens"), href: "/categories/womens-fashion" },
-    { label: t("categories.babyToys"), href: "/categories/baby-toys" },
-    { label: t("categories.beautyHealth"), href: "/categories/beauty-health" },
-    { label: t("categories.electronics"), href: "/categories/electronics" },
-  ];
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  useEffect(() => {
+    async function fetchCategories() {
+      try {
+        const response = await getAllCategories();
+        setCategories(response.data?.slice(0, 5) ?? []);
+      } catch (error) {
+      }
+    }
+
+    fetchCategories();
+  }, []);
 
   const quickLinks = [
     { label: t("quickLinks.about"), href: "/about" },
     { label: t("quickLinks.shop"), href: "/shop" },
     { label: t("quickLinks.brands"), href: "/brands" },
-    { label: t("quickLinks.deals"), href: "/deals" },
     { label: t("quickLinks.contact"), href: "/contact" },
   ];
 
@@ -36,7 +45,7 @@ export default function Footer() {
     { label: t("customer.orders"), href: "/orders" },
     { label: t("customer.wishlist"), href: "/wishlist" },
     { label: t("customer.returns"), href: "/returns" },
-    { label: t("customer.help"), href: "/help" },
+    { label: t("customer.help"), href: "/contact" },
   ];
 
   return (
@@ -133,9 +142,9 @@ export default function Footer() {
 
             <ul className="space-y-3.5">
               {categories.map((category) => (
-                <li key={category.label}>
+                <li key={category._id}>
                   <Link
-                    href={category.href}
+                    href={`/categories/${category._id}`}
                     className="group flex items-center gap-1.5 text-[12px] text-sage transition-colors hover:text-background"
                   >
                     <IconChevronRight
@@ -144,7 +153,7 @@ export default function Footer() {
                       className="opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100 rtl:rotate-180 rtl:group-hover:-translate-x-0.5"
                     />
 
-                    {category.label}
+                    {category.name}
                   </Link>
                 </li>
               ))}

@@ -1,13 +1,6 @@
-import React from 'react'
+import CartScreen from "@/src/features/cart/screens/CartScreen";
+import React from "react";
 
 export default function CartPage() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="max-w-md w-full space-y-6 p-8 bg-white rounded-xl shadow-md border border-gray-100">
-        <h2 className="text-2xl font-bold text-center text-gray-800">
-          cart
-        </h2>
-      </div>
-    </div>
-  )
+  return <CartScreen />;
 }

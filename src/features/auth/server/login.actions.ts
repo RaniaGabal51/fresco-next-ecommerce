@@ -4,6 +4,8 @@ import { z } from "zod";
 import { AxiosRequestConfig, isAxiosError } from "axios";
 import { apiClient } from "@/src/services/apiClient";
 import { loginSchema, loginValues } from "../schemas/login.schema";
+import { cookies } from "next/headers";
+import { setToken } from "./auth.actions";
 
 type LoginResponse = {
   message: string;
@@ -45,16 +47,22 @@ export async function loginAction(
 
     const { data } = await apiClient.request(options);
 
-    return {
-      success: true,
-      message: "Login successful.",
-      data,
-    };
+    await setToken(data.token);
+    const cookieStore = await cookies();
+    cookieStore.set("token", data.token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+    });
+    return { success: true, message: "Login successful.", data };
   } catch (error) {
     if (isAxiosError(error)) {
       return {
         success: false,
-        message: error.response?.data.message ?? "Unable to log in. Please check your email and password.",
+        message:
+          error.response?.data.message ??
+          "Unable to log in. Please check your email and password.",
       };
     }
 

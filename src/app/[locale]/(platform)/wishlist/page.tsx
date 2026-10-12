@@ -1,13 +1,14 @@
-import React from 'react'
+import { getWishlist } from "@/src/features/wishlist/server/wishlist.actions";
+import WishlistScreen from "@/src/features/wishlist/screens/WishlistScreen";
+import type { Product } from "@/src/features/products/types/products.types";
 
-export default function WishlistPage() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="max-w-md w-full space-y-6 p-8 bg-white rounded-xl shadow-md border border-gray-100">
-        <h2 className="text-2xl font-bold text-center text-gray-800">
-          wishlist
-        </h2>
-      </div>
-    </div>
-  )
+export default async function WishlistPage() {
+  const response = await getWishlist();
+
+  const products: Product[] =
+    response.status === "success" && Array.isArray(response.data)
+      ? response.data
+      : [];
+
+  return <WishlistScreen initialProducts={products} />;
 }

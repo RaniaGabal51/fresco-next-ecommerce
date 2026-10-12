@@ -9,6 +9,8 @@ import Footer from "../../components/providers/layout/Footer";
 import { NextIntlClientProvider } from "next-intl";
 import { verifyToken } from "@/src/features/auth/server/auth.actions";
 import { authReducer } from "@/src/features/auth/slices/auth.slice";
+import { getCartItems } from "@/src/features/cart/server/cart.actions";
+import { CartValuesType } from "@/src/features/cart/slices/cart.slice";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +41,25 @@ export default async function RootLayout({
 
   const authStates = await verifyToken();
 
+  let cartValues: CartValuesType = {
+    cartId: null,
+    status: "",
+    message: "",
+    numOfCartItems: 0,
+    data: {
+      products: [],
+      totalCartPrice: 0,
+    },
+  };
+
+  if (authStates.isAuthenticated === true) {
+    const cartResponse = await getCartItems();
+
+    if (cartResponse.status === "success") {
+      cartValues = cartResponse;
+    }
+  }
+
   return (
     <html
       lang={locale}
@@ -47,7 +68,9 @@ export default async function RootLayout({
     >
       <body className="min-h-full bg-background font-sans text-foreground">
         <NextIntlClientProvider>
-          <Providers preloadState={{ authReducer: authStates }}>
+          <Providers
+            preloadState={{ authReducer: authStates, cartReducer: cartValues }}
+          >
             <div className="flex min-h-screen flex-col">
               <Navbar />
 

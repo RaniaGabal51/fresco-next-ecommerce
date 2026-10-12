@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -7,12 +9,82 @@ import {
   IconStarFilled,
 } from "@tabler/icons-react";
 import { Product } from "../types/products.types";
+import { addProductToCart } from "../../cart/server/cart.actions";
+import { toast } from "sonner";
+import { cartActions } from "../../cart/slices/cart.slice";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { IconHeartFilled } from "@tabler/icons-react";
+import {
+  addProductToWishlist,
+  removeProductFromWishlist,
+} from "@/src/features/wishlist/server/wishlist.actions";
 
-export default function ProductCard({ product }: { product: Product }) {
+type ProductCardProps = {
+  product: Product;
+  initialIsWishlisted?: boolean;
+  onWishlistChange?: (productId: string, isWishlisted: boolean) => void;
+};
+
+export default function ProductCard({
+  product,
+  initialIsWishlisted = false,
+  onWishlistChange,
+}: ProductCardProps) {
   const rating = product.ratingsAverage || 0;
   const ratingCount = product.ratingsQuantity || 0;
   const hasDiscount =
     product.priceAfterDiscount && product.priceAfterDiscount < product.price;
+
+  const { setCartInfo } = cartActions;
+
+  const dispatch = useDispatch();
+
+  const [isWishlisted, setIsWishlisted] = useState(initialIsWishlisted);
+  const [isWishlistLoading, setIsWishlistLoading] = useState(false);
+
+  async function handleWishlistToggle() {
+    if (isWishlistLoading) return;
+
+    setIsWishlistLoading(true);
+
+    try {
+      const response = isWishlisted
+        ? await removeProductFromWishlist(product._id)
+        : await addProductToWishlist(product._id);
+
+      if (response.status !== "success") {
+        toast.error(response.message ?? "Could not update wishlist.");
+        return;
+      }
+
+      const nextIsWishlisted = !isWishlisted;
+
+      setIsWishlisted(nextIsWishlisted);
+
+      onWishlistChange?.(product._id, nextIsWishlisted);
+
+      toast.success(
+        isWishlisted ? "Removed from wishlist" : "Added to wishlist",
+      );
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsWishlistLoading(false);
+    }
+  }
+
+  async function handleAddToCart() {
+    const response = await addProductToCart(product._id);
+    if (response.status === "fail" || response.status === "error") {
+      toast.error(response.message);
+      return;
+    }
+    if (response.status === "success") {
+      dispatch(setCartInfo(response));
+      toast.success(response.message);
+    }
+  }
 
   return (
     <article
@@ -98,27 +170,27 @@ export default function ProductCard({ product }: { product: Product }) {
         >
           <button
             type="button"
-            aria-label="Add to wishlist"
-            className="
-              flex
-              h-9
-              w-9
-              items-center
-              justify-center
-              rounded-full
-              border
-              border-border-light
-              bg-surface
-              text-primary
-              shadow-[0_4px_12px_rgba(25,55,44,0.08)]
-              transition-all
-              duration-200
-              hover:border-accent
-              hover:bg-accent
-              hover:text-white
-            "
+            aria-label={
+              isWishlisted ? "Remove from wishlist" : "Add to wishlist"
+            }
+            aria-pressed={isWishlisted}
+            disabled={isWishlistLoading}
+            onClick={handleWishlistToggle}
+            className={`
+    flex h-9 w-9 items-center justify-center rounded-full
+    border border-border-light bg-surface
+    shadow-[0_4px_12px_rgba(25,55,44,0.08)]
+    transition-all duration-200
+    hover:border-accent hover:bg-accent hover:text-white
+    disabled:cursor-not-allowed disabled:opacity-60
+    ${isWishlisted ? "border-accent bg-accent text-white" : "text-primary"}
+  `}
           >
-            <IconHeart size={16} stroke={1.7} />
+            {isWishlisted ? (
+              <IconHeartFilled size={16} />
+            ) : (
+              <IconHeart size={16} stroke={1.7} />
+            )}
           </button>
 
           <Link
@@ -230,6 +302,7 @@ export default function ProductCard({ product }: { product: Product }) {
               hover:scale-105
               hover:bg-primary-light
             "
+            onClick={handleAddToCart}
           >
             <IconPlus size={17} stroke={2} />
           </button>

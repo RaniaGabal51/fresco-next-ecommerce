@@ -12,8 +12,7 @@
       "home": "Home",
       "shop": "Shop",
       "categories": "Categories",
-      "brands": "Brands",
-      "deals": "Deals"
+      "brands": "Brands"
     },
     "buttons": {
       "account": "Account",
@@ -31,6 +30,13 @@
       "search": "Search",
       "wishlist": "Wishlist",
       "shoppingBag": "Shopping bag"
+    },
+    "categoriesDropdown": {
+      "all": "All Categories",
+      "electronics": "Electronics",
+      "womensFashion": "Women's Fashion",
+      "mensFashion": "Men's Fashion",
+      "beautyHealth": "Beauty & Health"
     }
   },
   "signupHero": {
@@ -131,7 +137,6 @@
       "about": "About Us",
       "shop": "Shop",
       "brands": "Brands",
-      "deals": "Deals",
       "contact": "Contact Us"
     },
     "customer": {
@@ -304,6 +309,429 @@
       "title": "Check out this product | FRESCO",
       "text": "Take a look at this beautiful product from FRESCO.",
       "unsupported": "Sharing is not supported in this browser."
+    }
+  },
+  "shop": {
+    "breadcrumb": {
+      "home": "Home",
+      "shop": "Shop"
+    },
+    "eyebrow": "THE FRESCO COLLECTION",
+    "title": "Shop All Products",
+    "description": "Explore our curated collection of fashion, technology, and everyday essentials, selected to bring quality and style into your daily life.",
+    "showing": "Showing",
+    "products": "products",
+    "sort": "Sort by",
+    "empty": {
+      "title": "No products found",
+      "description": "There are no products available at the moment."
+    }
+  },
+  "cart": {
+    "breadcrumb": {
+      "home": "Home",
+      "shoppingCart": "Shopping Cart"
+    },
+    "header": {
+      "title": "Shopping Cart",
+      "subtitle": "Review your items before proceeding to checkout"
+    },
+    "summary": {
+      "badge": "Your Cart",
+      "item": "item",
+      "items": "items",
+      "title": "Order Summary",
+      "subtitle": "Review your items before completing your order.",
+      "freeShippingUnlocked": "You've unlocked free shipping",
+      "addMoreForFreeShippingBefore": "Add",
+      "addMoreForFreeShippingAfter": "for free shipping",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "free": "Free",
+      "estimatedTotal": "Estimated Total",
+      "freeShippingApplied": "Free shipping applied",
+      "shippingFeeAdded": "Includes 50 EGP shipping fee",
+      "continueShopping": "Continue Shopping",
+      "features": {
+        "secure": {
+          "title": "Secure Shopping",
+          "desc": "Your information stays protected"
+        },
+        "flexible": {
+          "title": "Flexible Delivery",
+          "desc": "Delivery details at checkout"
+        },
+        "safe": {
+          "title": "Safe Checkout",
+          "desc": "A simple and secure experience"
+        }
+      }
+    },
+    "checkoutButton": {
+      "proceed": "Proceed to Checkout",
+      "proceedSubtitle": "Continue to delivery & payment",
+      "loginToCheckout": "Login to Checkout",
+      "noAccount": "Don't have an account?",
+      "createOne": "Create one"
+    },
+    "emptyCart": {
+      "errorTitle": "Something went wrong",
+      "errorDesc": "We couldn't load your cart right now. Please try again or continue shopping.",
+      "emptyTitle": "Your cart is empty",
+      "emptyDesc": "Looks like you haven't added anything to your cart yet. Explore our collection and find something you love.",
+      "continueShopping": "Continue Shopping"
+    },
+    "cartItem": {
+      "itemsAvailable": "items available",
+      "outOfStock": "Out of stock",
+      "quantity": "Quantity",
+      "total": "Total",
+      "pricePerItem": "Price per item",
+      "toastError": "Something went wrong. Please try again.",
+      "swal": {
+        "title": "Remove item?",
+        "text": "This item will be removed from your cart.",
+        "confirmButton": "Yes, remove it",
+        "cancelButton": "Keep it"
+      },
+      "emptyCart": {
+        "errorTitle": "Something went wrong",
+        "errorDesc": "We couldn't load your cart right now. Please try again or continue shopping.",
+        "emptyTitle": "Your cart is empty",
+        "emptyDesc": "Looks like you haven't added anything to your cart yet. Explore our collection and find something you love.",
+        "continueShopping": "Continue Shopping"
+      }
+    },
+    "cartScreen": {
+      "item": "item",
+      "items": "items",
+      "youHave": "You have",
+      "inYourCart": "in your cart",
+      "removeAll": "Remove All",
+      "toastError": "Something went wrong. Please try again.",
+      "swal": {
+        "title": "Clear your cart?",
+        "text": "This will remove all {count} {itemText} from your cart.",
+        "confirmButton": "Yes, clear cart",
+        "cancelButton": "Keep items"
+      }
+    }
+  },
+  "brands": {
+    "home": "Home",
+    "brandsBreadcrumb": "Brands",
+    "title": "Brands You'll Love to Explore",
+    "subtitle": "Discover our curated collection of brands and find the pieces that fit your lifestyle.",
+    "collectionLabel": "OUR COLLECTION",
+    "collectionTitle": "Explore All Brands",
+    "collectionDesc": "Browse our collection and discover your next favorite brand.",
+    "available": "available",
+    "errorTitle": "Something went wrong",
+    "errorDesc": "We couldn't load the brands. Please try again later.",
+    "emptyTitle": "No brands available",
+    "emptyDesc": "Please check back later for new brands."
+  },
+  "checkout": {
+    "screen": {
+      "toastCartError": "Your cart could not be found. Please return to your cart.",
+      "toastOrderError": "We couldn't create your order. Please try again.",
+      "toastPaymentLinkError": "The payment link could not be generated.",
+      "toastSuccess": "Your order has been placed successfully!",
+      "toastGenericError": "Something went wrong while placing your order.",
+      "secureCheckout": "Secure Checkout",
+      "title": "Complete Your Order",
+      "home": "Home",
+      "subtitle": "Enter your delivery details and choose your preferred payment method to complete your purchase.",
+      "backToCart": "Back to Cart",
+      "processing": "Processing...",
+      "placeOrder": "Place Order",
+      "continueToPayment": "Continue to Payment"
+    },
+    "breadcrumbs": {
+      "home": "Home",
+      "cart": "Cart",
+      "checkout": "Checkout"
+    },
+    "progress": {
+      "cart": "Cart",
+      "checkout": "Checkout",
+      "complete": "Complete"
+    },
+    "orderSummary": {
+      "title": "Order Summary",
+      "itemSingular": "item",
+      "itemPlural": "items",
+      "inYourCart": "in your cart",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "shippingCalculated": "Calculated by the store",
+      "cartTotal": "Cart Total",
+      "cartTotalDesc": "Before any additional shipping fees",
+      "reviewCart": "Review Your Cart",
+      "note": "Your final order details will be confirmed when your order is placed."
+    },
+    "paymentSection": {
+      "title": "Payment Method",
+      "subtitle": "Choose how you would like to pay.",
+      "cashTitle": "Cash on Delivery",
+      "cashDesc": "Pay when your order arrives at your doorstep.",
+      "onlineTitle": "Pay Online",
+      "onlineDesc": "Secure payment using your credit or debit card.",
+      "secureTitle": "Secure & Protected",
+      "secureDesc": "Your personal information is protected and kept private."
+    },
+    "shippingSection": {
+      "title": "Shipping Information",
+      "subtitle": "Where should we deliver your order?",
+      "infoTitle": "Delivery details",
+      "infoDesc": "Make sure your address and phone number are correct so we can deliver your order without any issues.",
+      "cityLabel": "City",
+      "cityPlaceholder": "e.g. Damietta",
+      "phoneLabel": "Phone Number",
+      "phonePlaceholder": "01xxxxxxxxx",
+      "addressLabel": "Street Address",
+      "addressPlaceholder": "Street name, building number, floor, apartment...",
+      "notesLabel": "Order Notes",
+      "notesOptional": "(Optional)",
+      "notesPlaceholder": "Any special instructions for your delivery?"
+    }
+  },
+  "Category": {
+    "breadcrumb": "FRESCO / THE COLLECTION",
+    "home": "Home",
+    "title": "Explore Categories",
+    "subtitle": "Discover your favorites, explore every collection, and find something made for your everyday.",
+    "collections": "Collections",
+    "errorTitle": "Categories couldn't load",
+    "errorDesc": "Something went wrong while loading the collections. Please refresh the page and try again.",
+    "emptyTitle": "No categories available",
+    "emptyDesc": "There are no collections to display right now."
+  },
+  "categoryProductsScreen": {
+    "errorLoadTitle": "Unable to load this collection",
+    "errorLoadDesc": "Please try again later.",
+    "breadcrumb": "FRESCO / COLLECTION",
+    "explorePrefix": "Explore our",
+    "exploreSuffix": "collection and find your favorites.",
+    "productSingular": "product",
+    "productPlural": "products",
+    "noProductsTitle": "No Products Found",
+    "noProductsDesc": "We couldn't find any products matching this categories right now. Please check back later or explore our full collection.",
+    "exploreShop": "Explore Shop"
+  },
+  "wishlistScreen": {
+    "header": {
+      "subtitle": "YOUR PERSONAL COLLECTION",
+      "title": "My Wishlist",
+      "home": "Home",
+      "description": "Your favorite pieces, all in one place.",
+      "itemSingular": "item",
+      "itemPlural": "items"
+    },
+    "empty": {
+      "title": "Your wishlist is waiting",
+      "description": "Save the pieces you love and they will appear here.",
+      "button": "Explore products"
+    }
+  },
+  "notFound": {
+    "eyebrow": "PAGE NOT FOUND",
+    "title": "Looks like you took a wrong turn.",
+    "description": "The page you're looking for doesn't exist or may have been moved. Let's get you back to something worth exploring.",
+    "backHome": "Back to Home",
+    "exploreShop": "Explore the Shop",
+    "footerText": "Fresh · Curated · Daily"
+  },
+  "privacyPolicy": {
+    "badge": "YOUR PRIVACY MATTERS",
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Privacy Policy"
+    },
+    "header": {
+      "title": "Privacy Policy",
+      "subtitle": "Learn how FRESCO collects, uses, and protects your information when you browse our website or use our services.",
+      "updated": "Last updated: September 2026"
+    },
+    "sidebar": {
+      "title": "ON THIS PAGE",
+      "nav1": "Information We Collect",
+      "nav2": "How We Use Information",
+      "nav3": "Data Security",
+      "nav4": "Cookies",
+      "nav5": "Your Rights",
+      "nav6": "Contact Us"
+    },
+    "sections": {
+      "sec1": {
+        "title": "Information We Collect",
+        "p1": "When you use FRESCO, we may collect information that you provide directly, such as your name, email address, phone number, shipping details, and account information.",
+        "p2": "We may also collect technical information about your interaction with our website, including browser information, device information, and usage data."
+      },
+      "sec2": {
+        "title": "How We Use Information",
+        "p1": "We use collected information to provide and improve our services, process orders, communicate with you, maintain account functionality, and provide a smoother shopping experience.",
+        "list1": "Process and manage your orders.",
+        "list2": "Maintain and improve your account experience.",
+        "list3": "Respond to support requests and inquiries.",
+        "list4": "Improve website functionality and user experience."
+      },
+      "sec3": {
+        "title": "Data Security",
+        "p1": "We take reasonable measures to protect the information associated with your account and your interactions with FRESCO. However, no method of transmission or electronic storage can be guaranteed to be completely secure.",
+        "boxTitle": "Your information matters",
+        "boxDesc": "We aim to handle your information responsibly and use it only for legitimate business and service purposes."
+      },
+      "sec4": {
+        "title": "Cookies",
+        "p1": "FRESCO may use cookies and similar technologies to remember preferences, support essential website functionality, and understand how visitors interact with the website."
+      },
+      "sec5": {
+        "title": "Your Rights",
+        "p1": "Depending on applicable laws, you may have rights regarding the personal information associated with your account, including requesting access, correction, or deletion of certain information."
+      },
+      "sec6": {
+        "title": "Contact Us",
+        "p1": "If you have questions about this Privacy Policy or how your information is handled, please contact the FRESCO support team.",
+        "linkText": "Contact FRESCO Support"
+      }
+    }
+  },
+  "termsOfService": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Terms of Service"
+    },
+    "header": {
+      "title": "Terms of Service",
+      "subtitle": "Rules and guidelines for using our platform",
+      "updated": "Updated September 2026"
+    },
+    "intro": {
+      "title": "Please read carefully",
+      "desc": "By accessing or using FRESCO, you agree to follow these terms and conditions. If you do not agree with any part of these terms, please do not use the website."
+    },
+    "sections": {
+      "sec1": {
+        "title": "Acceptance of Terms",
+        "p1": "By accessing and using the FRESCO website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and any applicable policies referenced on the website."
+      },
+      "sec2": {
+        "title": "Account Registration",
+        "p1": "Some features may require you to create an account. You are responsible for providing accurate information and maintaining the confidentiality of your account credentials.",
+        "p2": "You are responsible for activities performed through your account and should notify FRESCO if you believe your account has been accessed without authorization."
+      },
+      "sec3": {
+        "title": "Products & Orders",
+        "p1": "Product information, descriptions, images, prices, and availability are displayed as part of the shopping experience. We may update product information or availability when necessary.",
+        "p2": "Placing an order does not necessarily guarantee its fulfillment. Orders may be subject to availability and other applicable conditions."
+      },
+      "sec4": {
+        "title": "Pricing & Payments",
+        "p1": "Prices displayed on FRESCO may change without prior notice. The applicable price is the price presented during the relevant purchasing process.",
+        "p2": "Payment information should be provided accurately when completing a purchase. Additional payment terms may apply depending on the selected payment method."
+      },
+      "sec5": {
+        "title": "User Responsibilities",
+        "p1": "You agree to use FRESCO only for lawful purposes and in a way that does not interfere with the operation, security, or availability of the website.",
+        "p2": "You must not attempt to gain unauthorized access to accounts, systems, services, or information belonging to FRESCO or other users."
+      },
+      "sec6": {
+        "title": "Intellectual Property",
+        "p1": "Unless otherwise stated, content presented on FRESCO, including text, graphics, branding, interface elements, and other materials, is intended for use within the website and may not be reproduced or distributed without appropriate authorization."
+      },
+      "sec7": {
+        "title": "Limitation of Liability",
+        "p1": "FRESCO aims to provide an accurate and reliable shopping experience. However, the website and its services may occasionally be unavailable, interrupted, or contain inaccuracies.",
+        "p2": "To the extent permitted by applicable law, FRESCO is not responsible for losses arising from circumstances outside its reasonable control."
+      },
+      "sec8": {
+        "title": "Changes to These Terms",
+        "p1": "We may update these Terms of Service from time to time. Changes become effective when the updated terms are published on the website."
+      },
+      "sec9": {
+        "title": "Contact Us",
+        "p1": "If you have questions about these Terms of Service, please contact the FRESCO support team.",
+        "linkText": "Contact FRESCO Support"
+      }
+    },
+    "footerText": "Fresh · Curated · Daily"
+  },
+  "contact": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Contact"
+    },
+    "header": {
+      "eyebrow": "WE'RE HERE TO HELP",
+      "title": "Let's start a",
+      "titleAccent": "conversation.",
+      "subtitle": "Have a question about your order, a product, or your shopping experience? Our team is here to help."
+    },
+    "details": {
+      "eyebrow": "CONTACT DETAILS",
+      "title": "We'd love to hear from you.",
+      "desc": "Reach out through any of the channels below and we'll get back to you as soon as possible."
+    },
+    "info": {
+      "phone": {
+        "title": "Phone",
+        "desc": "Mon–Fri from 8am to 6pm"
+      },
+      "email": {
+        "title": "Email",
+        "desc": "We'll respond within 24 hours"
+      },
+      "office": {
+        "title": "Office",
+        "desc": "Visit us"
+      },
+      "hours": {
+        "title": "Business Hours",
+        "monFri": "Monday – Friday:",
+        "sat": "Saturday:",
+        "sun": "Sunday:",
+        "closed": "Closed"
+      }
+    },
+    "social": {
+      "eyebrow": "STAY CONNECTED",
+      "title": "Follow FRESCO"
+    },
+    "form": {
+      "title": "Send us a message",
+      "desc": "Tell us what's on your mind and our team will get back to you as soon as possible.",
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "you@example.com",
+      "subjectLabel": "Subject",
+      "subjectDefault": "Select a subject",
+      "subjects": {
+        "general": "General Inquiry",
+        "order": "Order Support",
+        "shipping": "Shipping Question",
+        "returns": "Returns & Refunds",
+        "product": "Product Information",
+        "feedback": "Feedback & Suggestions",
+        "other": "Other"
+      },
+      "messageLabel": "Message",
+      "messagePlaceholder": "How can we help you?",
+      "submit": "Send Message",
+      "disclaimer": "By submitting this form, you agree to our",
+      "privacy": "Privacy Policy"
+    },
+    "helpCard": {
+      "title": "Looking for quick answers?",
+      "desc": "Check our frequently asked questions for information about orders, shipping, returns, and more.",
+      "link": "Visit Help Center"
+    },
+    "cta": {
+      "eyebrow": "NEED SOMETHING ELSE?",
+      "title": "Explore FRESCO",
+      "desc": "Discover our latest products and curated collections.",
+      "button": "Explore the Shop"
     }
   }
 }

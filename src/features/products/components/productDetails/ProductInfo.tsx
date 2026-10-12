@@ -76,7 +76,6 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
           url: window.location.href,
         });
       } catch (error) {
-        console.log("Error sharing:", error);
       }
     } else {
       alert(t("share.unsupported"));
@@ -84,10 +83,9 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
   };
 
   return (
-    <main className="bg-background">
-      <section className="px-4 py-7 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
+    <main className="w-full overflow-x-hidden bg-background">
+      <section className="w-full px-4 py-7 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
         <div className="mx-auto max-w-7xl">
-          {/* Breadcrumb */}
           <div className="mb-6 flex flex-wrap items-center gap-2 text-[10px] text-muted">
             <Link href="/" className="transition-colors hover:text-accent">
               {t("breadcrumb.home")}
@@ -110,14 +108,14 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
             )}
 
             <span>/</span>
-            <span className="max-w-[220px] truncate text-foreground">
+            <span className="max-w-[180px] truncate text-foreground sm:max-w-[220px]">
               {productinfo.title}
             </span>
           </div>
 
-          <div className="overflow-hidden rounded-3xl border border-border-light bg-surface shadow-[0_12px_45px_rgba(25,55,44,0.06)]">
-            <div className="grid lg:grid-cols-[1fr_1fr]">
-              <div className="border-b border-border-light p-5 sm:p-8 lg:border-b-0 lg:border-e lg:p-10 xl:p-12">
+          <div className="w-full overflow-hidden rounded-3xl border border-border-light bg-surface shadow-[0_12px_45px_rgba(25,55,44,0.06)]">
+            <div className="grid w-full grid-cols-1 lg:grid-cols-2">
+              <div className="w-full min-w-0 overflow-hidden border-b border-border-light p-4 sm:p-8 lg:border-b-0 lg:border-e lg:p-10 xl:p-12">
                 <div className="mb-4 flex items-center justify-between">
                   <span className="rounded-full bg-primary/8 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-primary">
                     {productinfo.brand?.name || "FRESCO"}
@@ -130,7 +128,7 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
                   )}
                 </div>
 
-                <div className="fresco-gallery">
+                <div className="fresco-gallery w-full min-w-0 overflow-hidden [&_.image-gallery]:w-full [&_.image-gallery-content]:w-full [&_.image-gallery-slide-wrapper]:w-full [&_.image-gallery-swipe]:w-full [&_.image-gallery-slides]:w-full [&_.image-gallery-image]:max-h-[350px] [&_.image-gallery-image]:w-full [&_.image-gallery-image]:object-contain [&_.image-gallery-thumbnails-wrapper]:w-full [&_.image-gallery-thumbnails-wrapper]:overflow-x-auto [&_.image-gallery-thumbnails]:flex [&_.image-gallery-thumbnails]:justify-center [&_.image-gallery-thumbnail]:w-14 [&_.image-gallery-thumbnail-image]:h-12 [&_.image-gallery-thumbnail-image]:object-cover">
                   <ImageGallery
                     items={galleryItems}
                     showPlayButton={false}
@@ -145,7 +143,7 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
                 </div>
               </div>
 
-              <div className="flex flex-col p-5 sm:p-8 lg:p-10 xl:p-12">
+              <div className="flex w-full min-w-0 flex-col p-4 sm:p-8 lg:p-10 xl:p-12">
                 <div className="mb-4 flex flex-wrap items-center gap-2">
                   {productinfo.category?.name && (
                     <Link
@@ -169,7 +167,7 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
                   )}
                 </div>
 
-                <h1 className="max-w-xl font-serif text-2xl font-semibold leading-[1.2] tracking-[-0.035em] text-primary sm:text-3xl lg:text-[38px]">
+                <h1 className="max-w-xl font-serif text-xl font-semibold leading-[1.2] tracking-[-0.035em] text-primary break-words sm:text-3xl lg:text-[38px]">
                   {productinfo.title}
                 </h1>
 
@@ -202,13 +200,13 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
                 </div>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <span className="text-2xl font-semibold tracking-tight text-primary sm:text-3xl">
+                  <span className="text-xl font-semibold tracking-tight text-primary sm:text-3xl">
                     {currentPrice.toLocaleString()} EGP
                   </span>
 
                   {hasDiscount && (
                     <>
-                      <span className="text-sm text-subtle line-through">
+                      <span className="text-xs text-subtle line-through sm:text-sm">
                         {productinfo.price.toLocaleString()} EGP
                       </span>
                       <span className="rounded-full bg-accent/10 px-2.5 py-1 text-[9px] font-semibold text-accent">
@@ -251,7 +249,7 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
                     {t("labels.quantity")}
                   </p>
 
-                  <div className="flex items-center justify-between gap-4">
+                  <div className="flex flex-wrap items-center justify-between gap-4">
                     <div className="inline-flex h-11 items-center overflow-hidden rounded-xl border border-border bg-background">
                       <button
                         type="button"
@@ -278,7 +276,7 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
                       <p className="text-[9px] uppercase tracking-[0.12em] text-muted">
                         {t("labels.total")}
                       </p>
-                      <p className="mt-1 text-lg font-semibold text-primary">
+                      <p className="mt-1 text-base font-semibold text-primary sm:text-lg">
                         {totalPrice.toLocaleString()} EGP
                       </p>
                     </div>
@@ -289,7 +287,7 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
                   <button
                     type="button"
                     disabled={productinfo.quantity <= 0}
-                    className="flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-6 text-xs font-semibold text-background shadow-[0_8px_20px_rgba(25,55,44,0.15)] transition-all duration-200 hover:bg-primary-light active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50"
+                    className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 text-xs font-semibold text-background shadow-[0_8px_20px_rgba(25,55,44,0.15)] transition-all duration-200 hover:bg-primary-light active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50"
                   >
                     <IconShoppingBag size={17} stroke={1.8} />
                     {t("actions.addToCart")}
@@ -298,7 +296,7 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
                   <button
                     type="button"
                     aria-label="Add to wishlist"
-                    className="flex h-12 items-center justify-center gap-2 rounded-xl border border-border px-5 text-xs font-semibold text-primary transition-all duration-200 hover:border-accent hover:text-accent"
+                    className="flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-border px-5 text-xs font-semibold text-primary transition-all duration-200 hover:border-accent hover:text-accent sm:w-auto"
                   >
                     <IconHeart size={17} stroke={1.8} />
                     {t("actions.wishlist")}
@@ -335,8 +333,7 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
             </div>
           </div>
 
-          {/* Tabs Section */}
-          <section className="mt-6 overflow-hidden rounded-3xl border border-border-light bg-surface shadow-[0_8px_30px_rgba(25,55,44,0.04)]">
+          <section className="mt-6 w-full overflow-hidden rounded-3xl border border-border-light bg-surface shadow-[0_8px_30px_rgba(25,55,44,0.04)]">
             <div className="flex overflow-x-auto border-b border-border-light">
               <TabButton
                 active={activeTab === "details"}
@@ -358,7 +355,7 @@ export default function ProductInfo({ productinfo }: ProductInfoProps) {
               </TabButton>
             </div>
 
-            <div className="p-5 sm:p-8 lg:p-10">
+            <div className="p-4 sm:p-8 lg:p-10">
               {activeTab === "details" && (
                 <ProductDetailsTab product={productinfo} />
               )}
@@ -386,12 +383,12 @@ function ProductDetailsTab({ product }: { product: ProductDetails }) {
     .filter(Boolean);
 
   return (
-    <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr]">
+    <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr]">
       <div>
         <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-accent">
           {t("details.eyebrow")}
         </p>
-        <h2 className="font-serif text-2xl font-semibold tracking-[-0.03em] text-primary">
+        <h2 className="font-serif text-xl font-semibold tracking-[-0.03em] text-primary sm:text-2xl">
           {t("details.title")}
         </h2>
 
@@ -402,7 +399,7 @@ function ProductDetailsTab({ product }: { product: ProductDetails }) {
               className="flex items-start gap-3 text-xs leading-6 text-muted"
             >
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              <span>{line}</span>
+              <span className="break-words">{line}</span>
             </div>
           ))}
         </div>
@@ -517,7 +514,7 @@ function ReviewsTab({
                     {new Date(review.createdAt).toLocaleDateString()}
                   </span>
                 </div>
-                <p className="mt-3 max-w-3xl text-xs leading-6 text-muted">
+                <p className="mt-3 max-w-3xl text-xs leading-6 text-muted break-words">
                   {review.review}
                 </p>
               </article>
@@ -651,7 +648,7 @@ function ShippingCard({
             className="flex items-start gap-2 text-[10px] leading-5 text-muted"
           >
             <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-            <span>{item}</span>
+            <span className="break-words">{item}</span>
           </li>
         ))}
       </ul>

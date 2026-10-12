@@ -1,13 +1,23 @@
-import React from 'react'
 
-export default function CategoriesPage() {
+import { getAllCategories } from "@/src/features/categories/services/getAllCategories";
+import CategoriesScreen from "@/src/features/categories/screens/CategoriesScreen";
+import type { Category } from "@/src/features/categories/types/categories.types";
+
+export default async function CategoriesPage() {
+  let categories: Category[] = [];
+  let error = false;
+
+  try {
+    const response = await getAllCategories();
+    categories = response.data ?? [];
+  } catch (err) {
+    error = true;
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="max-w-md w-full space-y-6 p-8 bg-white rounded-xl shadow-md border border-gray-100">
-        <h2 className="text-2xl font-bold text-center text-gray-800">
-          categories
-        </h2>
-      </div>
-    </div>
-  )
+    <CategoriesScreen
+      categories={categories}
+      error={error}
+    />
+  );
 }

@@ -1,13 +1,17 @@
-import React from 'react'
 
-export default function BrandsPage() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="max-w-md w-full space-y-6 p-8 bg-white rounded-xl shadow-md border border-gray-100">
-        <h2 className="text-2xl font-bold text-center text-gray-800">
-         brands
-        </h2>
-      </div>
-    </div>
-  )
+import { getAllBrands } from "@/src/features/brands/server/brands.actions";
+import BrandsScreen from "@/src/features/brands/screens/BrandsScreen";
+import type { Brand } from "@/src/features/brands/types/brands.types";
+
+export default async function BrandsPage() {
+  let brands: Brand[] = [];
+  let error = false;
+
+  try {
+    brands = await getAllBrands();
+  } catch {
+    error = true;
+  }
+
+  return <BrandsScreen brands={brands} error={error} />;
 }
